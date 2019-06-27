@@ -37,7 +37,7 @@ gulp.task('scripts', function() {
             './src/js/script.js',
         ])
         .pipe(concat('bundle.script.js'))
-        //.pipe(minifyjs())
+        .pipe(minifyjs())
         .pipe(gulp.dest('./dist'))
         .pipe(filesize());
 });

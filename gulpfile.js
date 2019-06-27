@@ -61,7 +61,7 @@ gulp.task('run', function() {
             livereload: false,
             open: true,
             port : 8000,
-            host : '192.168.1.147',
+            host : 'localhost',
         }));
 });
 

@@ -1,10 +1,10 @@
-let slider = new Slider({
+/*let slider = new Slider({
     el: '.slides',
     items: 3,
-    offsetRight: 10,
+    offsetRight: 60,
     prev: '.carousel__nav-prev',
     next: '.carousel__nav-next',
-});
+});*/
 
 function Slider(levit) {
     const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;

@@ -1,3 +1,11 @@
+let slider = new Slider({
+    el: '.slides',
+    items: 3,
+    offsetRight: 10,
+    prev: '.carousel__nav-prev',
+    next: '.carousel__nav-next',
+});
+
 function Slider(levit) {
     const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
     const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
@@ -39,16 +47,16 @@ function Slider(levit) {
 
     this.goTo = function (index) {
         if (isSmoothScrollSupported) {
-            let distance = this.divEl[index].offsetLeft - this.margin;
-            this.el.scrollTo({
-                top: 0,
-                left: distance,
-                behavior: "smooth"
-            });
-
+            if(this.divEl[index]){
+                let distance = this.divEl[index].offsetLeft - this.margin;
+                this.el.scrollTo({
+                    top: 0,
+                    left: distance,
+                    behavior: "smooth"
+                });
+            }
         } else {
             this.scrollBy(index, 300);
-
         }
     };
 
@@ -89,7 +97,7 @@ function Slider(levit) {
             this.scrollPosition = e.target.scrollLeft;
             this.currentIndex = Math.floor(this.scrollPosition / this.elWidth);
             isScrolling = true;
-            console.log(this.currentIndex);
+            //console.log(this.currentIndex);
         }
         if(timer !== null) {
             clearTimeout(timer);

@@ -1,10 +1,10 @@
-/*let slider = new Slider({
+let slider = new Slider({
     el: '.slides',
     items: 3,
     offsetRight: 60,
     prev: '.carousel__nav-prev',
     next: '.carousel__nav-next',
-});*/
+});
 
 function Slider(levit) {
     const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
@@ -48,7 +48,7 @@ function Slider(levit) {
     this.goTo = function (index) {
         if (isSmoothScrollSupported) {
             if(this.divEl[index]){
-                let distance = this.divEl[index].offsetLeft - this.margin;
+                let distance = this.divEl[index].offsetLeft - this.margin - 15;
                 this.el.scrollTo({
                     top: 0,
                     left: distance,
